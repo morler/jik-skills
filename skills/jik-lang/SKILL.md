@@ -5,18 +5,20 @@ description: 编写、审查和调试 Jik 语言及 .jik 文件；处理 jik che
 
 # Jik 语言开发
 
-Jik 是静态类型、编译到 C 的语言，复合值使用区域管理内存。先查当前版本文档与已有示例，再写代码；不要套用其他语言的语法或假定标准库 API 存在。本技能以 Jik 源码仓库的 `docs/`、`examples/`、`test/jik/` 和源码为依据；以下文档和示例路径均相对于 Jik 源码仓库根目录，而非 skill 或使用者项目目录。编写时参考的仓库提交：`003fa39`；遇到差异以当前实现和测试为准。
+Jik 是静态类型、编译到 C 的语言，复合值使用区域管理内存。先查当前版本文档与已有示例，再写代码；不要套用其他语言的语法或假定标准库 API 存在。参考 [Jik 官方文档](https://jik-lang.org/docs/index.html)及源码仓库的 `docs/`、`examples/`、`test/jik/` 和源码；下方 `docs/`、`examples/`、`test/` 等路径均相对于 Jik 源码仓库根目录，`references/` 路径则相对于本技能目录。原有仓库内容编写时参考的提交：`003fa39`；遇到差异以当前实现和测试为准。
 
 在其他项目使用已安装的 Jik 时，先运行 `jik version` 和 `jik help topics`，再用 `jik help <主题>` 查询对应版本的文档，例如 `jik help syntax`、`jik help regions` 或 `jik help testing`。`jik env` 可显示配置的 `root` 等路径，但不要假定该目录包含源码、文档文件或示例；只有确认文件存在后才使用下面的仓库相对路径。
 
 ## 文档导航
 
+- 查找在线文档或排查区域、错误处理、C 互操作及平台限制时，按需读取本技能的 [`references/official-docs.md`](references/official-docs.md)；官网内容可能与已安装版本不同。
 - 语言概览与主题索引：`docs/overview.md`；精确语法：`docs/grammar.md`。
 - 运行与 CLI：`docs/overview/02-running-jik-code.md`、`docs/cli.md`。
 - 模块：`docs/overview/03-files-modules-and-imports.md`；基础语法、类型和变量：`docs/overview/04-basic-syntax-and-structure.md` 至 `docs/overview/06-variables-and-assignment.md`。
 - struct、区域、enum、option、variant、容器、控制流、错误处理、FFI：依次查 `docs/overview/07-structs.md` 至 `docs/overview/17-ffi-c-interop.md`；内建函数和标准库见后续章节。
 - 标准库 API：`docs/jiklib/`；对应实现：`jiklib/`。按需阅读具体模块，不要猜函数签名。
 - 可运行的主题示例及说明：`examples/README.md`；边界条件和诊断：`test/jik/`，特别是 `test/jik/test_regions.jik`、`test/jik/test_compiler_errors.jik`。
+- 本技能随附的完整程序速查（控制流、字典与 option、region、错误处理和测试）：按需读取 [`references/examples.md`](references/examples.md)；示例依据 [Jik 官方示例](https://jik-lang.org/examples.html)。
 - 编译器构建与自举：`docs/development.md`；已知限制：`docs/known-issues.md`。
 
 ## 工作流程
